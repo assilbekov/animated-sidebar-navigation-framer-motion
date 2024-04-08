@@ -1,4 +1,4 @@
-import { motion, useAnimationControls } from "framer-motion";
+import { AnimatePresence, motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
   ChartBarIcon,
@@ -88,57 +88,58 @@ export const Navigation = () => {
               <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Dashboard"
-            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Projects"
-            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Tasks"
-            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Reporting"
-            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Users"
-            onClick={setSelectedProject}
           />
         </div>
         <div className="flex flex-col gap-3">
           <ProjectLink
             iconClassName="bg-pink-700 border-pink-600"
             label="Virtual Reality"
+            onClick={setSelectedProject}
           />
           <ProjectLink
             iconClassName="bg-indigo-700 border-indigo-600"
             label="Augmented Reality"
+            onClick={setSelectedProject}
           />
           <ProjectLink
             iconClassName="bg-cyan-700 border-cyan-600"
             label="Mixed Reality"
+            onClick={setSelectedProject}
           />
           <ProjectLink
             iconClassName="bg-yellow-700 border-yellow-600"
             label="Artificial Intelligence"
+            onClick={setSelectedProject}
           />
         </div>
       </motion.nav>
-      {selectedProject && <ProjectNavigation isOpen={isOpen} />}
+      <AnimatePresence>
+        {selectedProject && <ProjectNavigation isOpen={isOpen} />}
+      </AnimatePresence>
     </>
   );
 };

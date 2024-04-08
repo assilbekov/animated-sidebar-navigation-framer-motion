@@ -2,18 +2,25 @@ import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 type ProjectLinkProps = {
   iconClassName: string;
-  label: React.ReactNode;
+  label: string;
   href?: string;
+  onClick: (v: string) => void;
 };
 
 export const ProjectLink = ({
   iconClassName,
   label,
   href,
+  onClick,
 }: ProjectLinkProps) => {
+  const handleClick = () => {
+    onClick(label);
+  };
+
   return (
     <a
       href={href}
+      onClick={handleClick}
       className="flex p-1 rounded cursor-pointer stroke-[0.75] hover:stroke-slate-50 stroke-slate-200 text-slate-200 hover:text-slate-50 place-items-center gap-3 hover:bg-slate-700/30 transition-colors duration-100"
     >
       <div
