@@ -79,11 +79,36 @@ export const Navigation = () => {
         </button>
       </div>
       <div className="flex flex-col gap-3">
-        <NavigationLink icon={<ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Dashboard" />
-        <NavigationLink icon={<Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Projects" />
-        <NavigationLink icon={<DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Tasks" />
-        <NavigationLink icon={<ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Reporting" />
-        <NavigationLink icon={<UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Users" />
+        <NavigationLink
+          icon={
+            <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          }
+          label="Dashboard"
+        />
+        <NavigationLink
+          icon={
+            <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          }
+          label="Projects"
+        />
+        <NavigationLink
+          icon={
+            <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          }
+          label="Tasks"
+        />
+        <NavigationLink
+          icon={
+            <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          }
+          label="Reporting"
+        />
+        <NavigationLink
+          icon={
+            <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+          }
+          label="Users"
+        />
       </div>
     </motion.nav>
   );
