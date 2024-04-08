@@ -1,9 +1,17 @@
 import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
+import {
+  ChartBarIcon,
+  ChartPieIcon,
+  DocumentCheckIcon,
+  Square2StackIcon,
+  UsersIcon,
+} from "@heroicons/react/24/outline";
+import { NavigationLink } from "./NavigationLink";
 
 const containerVariants = {
   close: {
-    width: "4rem",
+    width: "5rem",
     transition: {
       type: "spring",
       dumping: 15,
@@ -60,7 +68,7 @@ export const Navigation = () => {
             animate={svgAnimationControls}
             transition={{ duration: 0.5, type: "spring" }}
             stroke="currentColor"
-            className="w-6 h-6 stroke-neutral-200"
+            className="w-8 h-8 stroke-neutral-200"
           >
             <path
               strokeLinecap="round"
@@ -69,6 +77,13 @@ export const Navigation = () => {
             />
           </motion.svg>
         </button>
+      </div>
+      <div className="flex flex-col gap-3">
+        <NavigationLink icon={<ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Dashboard" />
+        <NavigationLink icon={<Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Projects" />
+        <NavigationLink icon={<DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Tasks" />
+        <NavigationLink icon={<ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Reporting" />
+        <NavigationLink icon={<UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />} label="Users" />
       </div>
     </motion.nav>
   );
