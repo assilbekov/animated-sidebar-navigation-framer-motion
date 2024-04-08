@@ -1,9 +1,45 @@
+import { motion, useAnimationControls } from "framer-motion";
+import { useEffect, useState } from "react";
+
+const containerVariants = {
+  close: {
+    width: "4rem",
+    transition: {
+      type: "spring",
+      dumping: 15,
+      duration: 0.5,
+    },
+  },
+  open: {
+    width: "16rem",
+    transition: {
+      type: "spring",
+      dumping: 15,
+      duration: 0.5,
+    },
+  },
+};
+
 export const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const containerAnimationContrors = useAnimationControls();
+
+  useEffect(() => {
+    containerAnimationContrors.start(isOpen ? "open" : "close");
+  }, [isOpen]);
+
+  const toggleNavigation = () => setIsOpen(!isOpen);
+
   return (
-    <nav className="flex flex-col z-10 gap-20 p-5 bg-neutral-950 absolute h-full top-0 left-0 shadow shadow-neutral-600">
-      <div className="flex flex-col w-full place-items-center justify-between">
+    <motion.nav
+      initial="close"
+      animate={containerAnimationContrors}
+      variants={containerVariants}
+      className="flex flex-col z-10 gap-20 p-5 bg-neutral-950 absolute h-full top-0 left-0 shadow shadow-neutral-600"
+    >
+      <div className="flex flex-row w-full justify-between place-items-center">
         <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-700 rounded-full"></div>
-        <button>
+        <button className="p-1 rounded-full flex" onClick={toggleNavigation}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -20,6 +56,6 @@ export const Navigation = () => {
           </svg>
         </button>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
