@@ -23,7 +23,7 @@ export const ProjectLink = ({
         <p className="text-inherit truncate whitespace-nowrap tracking-wide">
           {label}
         </p>
-        <ChevronRightIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
+        <ChevronRightIcon className="stroke-inherit stroke-[0.75] min-w-6 w-6" />
       </div>
     </a>
   );

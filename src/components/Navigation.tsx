@@ -8,6 +8,7 @@ import {
   UsersIcon,
 } from "@heroicons/react/24/outline";
 import { NavigationLink } from "./NavigationLink";
+import { ProjectLink } from "./ProjectLink";
 
 const containerVariants = {
   close: {
@@ -108,6 +109,24 @@ export const Navigation = () => {
             <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
           }
           label="Users"
+        />
+      </div>
+      <div className="flex flex-col gap-3">
+        <ProjectLink
+          iconClassName="bg-pink-700 border-pink-600"
+          label="Virtual Reality"
+        />
+        <ProjectLink
+          iconClassName="bg-indigo-700 border-indigo-600"
+          label="Augmented Reality"
+        />
+        <ProjectLink
+          iconClassName="bg-cyan-700 border-cyan-600"
+          label="Mixed Reality"
+        />
+        <ProjectLink
+          iconClassName="bg-yellow-700 border-yellow-600"
+          label="Artificial Intelligence"
         />
       </div>
     </motion.nav>
