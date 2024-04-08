@@ -138,7 +138,13 @@ export const Navigation = () => {
         </div>
       </motion.nav>
       <AnimatePresence>
-        {selectedProject && <ProjectNavigation isOpen={isOpen} />}
+        {selectedProject && (
+          <ProjectNavigation
+            isOpen={isOpen}
+            selectedProject={selectedProject}
+            onClose={() => setSelectedProject("")}
+          />
+        )}
       </AnimatePresence>
     </>
   );
