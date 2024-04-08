@@ -88,30 +88,35 @@ export const Navigation = () => {
               <ChartBarIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Dashboard"
+            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <Square2StackIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Projects"
+            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <DocumentCheckIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Tasks"
+            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <ChartPieIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Reporting"
+            onClick={setSelectedProject}
           />
           <NavigationLink
             icon={
               <UsersIcon className="stroke-inherit stroke-[0.75] min-w-8 w-8" />
             }
             label="Users"
+            onClick={setSelectedProject}
           />
         </div>
         <div className="flex flex-col gap-3">
