@@ -1,6 +1,9 @@
+import { Navigation } from "./components/Navigation";
+
 export default function App() {
   return (
     <main className="w-full h-screen relative flex">
+      <Navigation />
       <section className="flex flex-col p-10 ml-20 w-full gap-5 relative">
         <h1 className="text-2xl text-neutral-200">Dashboard</h1>
         <div className="w-full h-80 bg-neutral-100/10 border rounded-xl border-neutral-500/50" />
@@ -10,5 +13,5 @@ export default function App() {
         </div>
       </section>
     </main>
-  )
+  );
 }
