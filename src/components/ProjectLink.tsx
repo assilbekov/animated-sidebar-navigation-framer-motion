@@ -14,7 +14,10 @@ export const ProjectLink = ({
   onClick,
 }: ProjectLinkProps) => {
   const handleClick = () => {
-    onClick(label);
+    onClick("");
+    setTimeout(() => {
+      onClick(label);
+    }, 100);
   };
 
   return (
